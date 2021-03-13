@@ -18,4 +18,8 @@
     <string name="Login_text">Login</string>
     <string name="Login_button">Login</string>
     <string name="signupText">Sign Up!</string>
+    <string name="appMission">SAILING MADE EASIER</string>
+    <string name="appIntro">This app provides everything you need to
+organise your sailing events.</string>
+    <string name="appIntro1">Register now to get started.</string>
 </resources>
