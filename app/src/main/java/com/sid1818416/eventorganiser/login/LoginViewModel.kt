@@ -1,20 +1,17 @@
 package com.sid1818416.eventorganiser.login
-
-import java.util.*
 import android.app.Application
 import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.*
+import kotlinx.coroutines.*
 import com.sid1818416.eventorganiser.database.RegisterRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+
 class LoginViewModel(private val repository: RegisterRepository, application: Application) :
     AndroidViewModel(application), Observable {
+    init {
+        Log.i("MYTAG", "init")
+    }
 
     val users = repository.users
 
@@ -58,6 +55,7 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
     }
 
     fun loginButton() {
+        Log.i("MYTAG", "Inside SUBMIT BUTTON")
         if (inputUsername.value == null || inputPassword.value == null) {
             _errorToast.value = true
         } else {
