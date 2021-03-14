@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Event Organiser</string>
+    <string name="app_name">Sailing Events Organiser</string>
     <string name="FirstNameText">First Name :</string>
     <string name="FirstNameTextField">Enter First Name</string>
     <string name="SecondNameTextField">Enter Last Name</string>
@@ -16,10 +16,12 @@
     <string name="UsernameTextField">Enter User Name</string>
     <string name="backButton">Back</string>
     <string name="Login_text">Login</string>
+    <string name="Login_here_text">Login here</string>
     <string name="Login_button">Login</string>
     <string name="signupText">Sign Up!</string>
     <string name="appMission">SAILING MADE EASIER</string>
     <string name="appIntro">This app provides everything you need to
 organise your sailing events.</string>
     <string name="appIntro1">Register now to get started.</string>
+    <string name="haveaccount">Already have an account? </string>
 </resources>
