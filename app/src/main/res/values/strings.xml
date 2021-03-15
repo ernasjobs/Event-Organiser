@@ -24,4 +24,5 @@
 organise your sailing events.</string>
     <string name="appIntro1">Register now to get started.</string>
     <string name="haveaccount">Already have an account? </string>
+    <string name="donthaveaccount">Do not have an account?</string>
 </resources>

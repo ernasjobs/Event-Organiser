@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sid1818416.eventorganiser.userDetails.UserDetailsFragmentDirections
+//import com.sid1818416.eventorganiser.userDetails.UserDetailsFragmentDirections
 import com.sid1818416.eventorganiser.R
 import com.sid1818416.eventorganiser.database.RegisterRepository
 import com.sid1818416.eventorganiser.databinding.UserDetailsFragmentBinding
@@ -49,13 +49,13 @@ class UserDetailsFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        userDetailsViewModel.navigateto.observe(viewLifecycleOwner, Observer { hasFinished ->
-            if (hasFinished == true) {
-                val action = UserDetailsFragmentDirections.actionUserDetailsFragmentToLoginFragment()
-                NavHostFragment.findNavController(this).navigate(action)
-                userDetailsViewModel.doneNavigating()
-            }
-        })
+//        userDetailsViewModel.navigateto.observe(viewLifecycleOwner, Observer { hasFinished ->
+//            if (hasFinished == true) {
+//                val action = UserDetailsFragmentDirections.actionUserDetailsFragmentToLoginFragment()
+//                NavHostFragment.findNavController(this).navigate(action)
+//                userDetailsViewModel.doneNavigating()
+//            }
+//        })
 
         initRecyclerView()
 

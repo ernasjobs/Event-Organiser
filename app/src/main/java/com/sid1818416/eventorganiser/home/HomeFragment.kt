@@ -1,4 +1,4 @@
-package com.sid1818416.eventorganiser.Home
+package com.sid1818416.eventorganiser.home
 
 import android.content.Context
 import android.os.Bundle

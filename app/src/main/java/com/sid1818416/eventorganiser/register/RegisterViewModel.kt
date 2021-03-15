@@ -86,6 +86,11 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
         super.onCleared()
     }
 
+    fun signIn() {
+        _navigateto.value = true
+    }
+
+
     fun doneNavigating() {
         _navigateto.value = false
         Log.i("MYTAG", "Done navigating ")

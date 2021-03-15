@@ -72,11 +72,21 @@ class LoginFragment : Fragment() {
             }
         })
 
-        loginViewModel.navigatetoUserDetails.observe(viewLifecycleOwner, Observer { hasFinished->
+//        loginViewModel.navigatetoUserDetails.observe(viewLifecycleOwner, Observer { hasFinished->
+//            if (hasFinished == true){
+//                Log.i("MYTAG","insidi observe")
+//                navigateUserDetails()
+//               // loginViewModel.doneNavigatingUserDetails()
+//
+//            }
+//        })
+        loginViewModel.navigatetoPostDetails.observe(viewLifecycleOwner, Observer { hasFinished->
             if (hasFinished == true){
-                Log.i("MYTAG","insidi observe")
-                navigateUserDetails()
-                loginViewModel.doneNavigatingUserDetails()
+                Log.i("MYTAG","inside observe")
+                //navigateUserDetails()
+                navigatePostDetails()
+                // loginViewModel.doneNavigatingUserDetails()
+                loginViewModel.doneNavigatingPostDetails()
             }
         })
 
@@ -92,9 +102,14 @@ class LoginFragment : Fragment() {
 
     }
 
-    private fun navigateUserDetails() {
-        Log.i("MYTAG","insidisplayUsersList")
-        val action = LoginFragmentDirections.actionLoginFragmentToUserDetailsFragment()
+//    private fun navigateUserDetails() {
+//        Log.i("MYTAG","insidisplayUsersList")
+//        val action = LoginFragmentDirections.actionLoginFragmentToUserDetailsFragment()
+//        NavHostFragment.findNavController(this).navigate(action)
+//    }
+    private fun navigatePostDetails() {
+        Log.i("MYTAG","displayfragmentdetails")
+        val action = LoginFragmentDirections.actionLoginFragmentToPostFragment()
         NavHostFragment.findNavController(this).navigate(action)
     }
 }

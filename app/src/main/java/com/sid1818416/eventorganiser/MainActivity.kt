@@ -5,7 +5,7 @@ import android.os.Bundle
 
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import com.sid1818416.eventorganiser.Home.HomeFragmentDirections
+import com.sid1818416.eventorganiser.home.HomeFragmentDirections
 import com.sid1818416.eventorganiser.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), AppNavigator {
