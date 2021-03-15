@@ -17,28 +17,20 @@
             app:destination="@id/homeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/userDetailsFragment"
-        android:name="com.sid1818416.eventorganiser.userDetails.UserDetailsFragment"
-        android:label="UserDetailsFragment" >
-        <action
-            android:id="@+id/action_userDetailsFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/loginFragment"
         android:name="com.sid1818416.eventorganiser.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_userDetailsFragment"
-            app:destination="@id/userDetailsFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_postFragment"
+            app:destination="@id/postFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.sid1818416.eventorganiser.Home.HomeFragment"
+        android:name="com.sid1818416.eventorganiser.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -46,6 +38,15 @@
             app:destination="@id/registerFragment" />
         <action
             android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.sid1818416.eventorganiser.post.PostFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_postFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
 
