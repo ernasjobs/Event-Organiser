@@ -34,6 +34,11 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
     val navigatetoUserDetails: LiveData<Boolean>
         get() = _navigatetoUserDetails
 
+    private val _navigatetoUserInfo = MutableLiveData<Boolean>()
+
+    val navigatetoUserInfo: LiveData<Boolean>
+        get() = _navigatetoUserInfo
+
     private val _navigatetoPostDetails = MutableLiveData<Boolean>()
 
     val navigatetoPostDetails: LiveData<Boolean>
@@ -73,7 +78,8 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
                         inputUsername.value = null
                         inputPassword.value = null
                      //   _navigatetoUserDetails.value = true
-                        _navigatetoPostDetails.value = true
+                     _navigatetoPostDetails.value = true
+                       // _navigatetoUserInfo.value = true
                     }else{
                         _errorToastInvalidPassword.value = true
                     }
@@ -89,6 +95,9 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
 
     fun doneNavigatingRegiter() {
         _navigatetoRegister.value = false
+    }
+    fun doneNavigatingUserInfo() {
+        _navigatetoUserInfo.value = false
     }
 
     fun doneNavigatingUserDetails() {

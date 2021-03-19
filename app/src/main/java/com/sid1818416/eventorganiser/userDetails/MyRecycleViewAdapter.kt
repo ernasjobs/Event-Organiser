@@ -6,9 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.sid1818416.eventorganiser.R
 import com.sid1818416.eventorganiser.database.RegisterEntity
-import com.sid1818416.eventorganiser.database.RegisterRepository
 import com.sid1818416.eventorganiser.databinding.ListItemBinding
-import com.sid1818416.eventorganiser.databinding.RegisterHomeFragmentBinding
 
 class MyRecycleViewAdapter(private val usersList :List<RegisterEntity>):RecyclerView.Adapter<MyviewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyviewHolder {
@@ -32,7 +30,7 @@ class MyRecycleViewAdapter(private val usersList :List<RegisterEntity>):Recycler
 
 class MyviewHolder(private val binding :ListItemBinding ):RecyclerView.ViewHolder(binding.root){
 
-    fun bind(user : RegisterEntity){
+    fun bind(user: RegisterEntity){
         binding.FirstNameTextView.text = user.firstName
         binding.secondNameTextView.text = user.lastName
         binding.userTextField.text = user.userName

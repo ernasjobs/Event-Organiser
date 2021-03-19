@@ -9,16 +9,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-//import com.sid1818416.eventorganiser.userDetails.UserDetailsFragmentDirections
 import com.sid1818416.eventorganiser.R
 import com.sid1818416.eventorganiser.database.RegisterRepository
 import com.sid1818416.eventorganiser.databinding.UserDetailsFragmentBinding
 import com.sid1818416.eventorganiser.database.RegisterDatabase
-import com.sid1818416.eventorganiser.userDetails.MyRecycleViewAdapter
-import com.sid1818416.eventorganiser.userDetails.UserDetailsViewModel
-import com.sid1818416.eventorganiser.userDetails.UserDetalisFactory
+
 
 class UserDetailsFragment : Fragment() {
 

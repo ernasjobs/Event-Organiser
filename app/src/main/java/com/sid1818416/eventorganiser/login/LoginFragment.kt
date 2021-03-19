@@ -91,6 +91,7 @@ class LoginFragment : Fragment() {
         })
 
 
+
         return binding.root
     }
 
@@ -112,4 +113,5 @@ class LoginFragment : Fragment() {
         val action = LoginFragmentDirections.actionLoginFragmentToPostFragment()
         NavHostFragment.findNavController(this).navigate(action)
     }
+
 }

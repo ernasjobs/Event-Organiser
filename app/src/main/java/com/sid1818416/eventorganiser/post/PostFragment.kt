@@ -34,7 +34,7 @@ class PostFragment : Fragment() {
         viewModel.myResponse.observe(viewLifecycleOwner, Observer { response ->
             if(response.isSuccessful)
             {
-                Log.d("Response", response.body()?.userid.toString())
+                Log.d("Response", response.body()?.userId.toString())
                 Log.d("Response", response.body()?.id.toString())
                 Log.d("Response", response.body()?.title!!)
                 Log.d("Response", response.body()?.body!!)
