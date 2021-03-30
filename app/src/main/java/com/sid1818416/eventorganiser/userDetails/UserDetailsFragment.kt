@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sid1818416.eventorganiser.R
-import com.sid1818416.eventorganiser.database.RegisterRepository
+import com.sid1818416.eventorganiser.database.repository.RegisterRepository
 import com.sid1818416.eventorganiser.databinding.UserDetailsFragmentBinding
 import com.sid1818416.eventorganiser.database.RegisterDatabase
 

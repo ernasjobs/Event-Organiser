@@ -1,7 +1,8 @@
-package com.sid1818416.eventorganiser.database
+package com.sid1818416.eventorganiser.database.repository
 
 import android.util.Log
-import androidx.lifecycle.LiveData
+import com.sid1818416.eventorganiser.database.RegisterDatabaseDao
+import com.sid1818416.eventorganiser.database.models.RegisterEntity
 
 class RegisterRepository(private val dao: RegisterDatabaseDao) {
 
@@ -10,7 +11,7 @@ class RegisterRepository(private val dao: RegisterDatabaseDao) {
         return dao.insert(user)
     }
 
-    suspend fun getUserName(userName: String):RegisterEntity?{
+    suspend fun getUserName(userName: String): RegisterEntity?{
         Log.i("MYTAG", "inside Repository Getusers fun ")
         return dao.getUsername(userName)
     }

@@ -3,7 +3,7 @@ package com.sid1818416.eventorganiser.login
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.sid1818416.eventorganiser.database.RegisterRepository
+import com.sid1818416.eventorganiser.database.repository.RegisterRepository
 import java.lang.IllegalArgumentException
 
 class LoginViewModelFactory(

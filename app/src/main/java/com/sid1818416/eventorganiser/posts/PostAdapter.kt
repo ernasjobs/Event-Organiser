@@ -1,14 +1,11 @@
 package com.sid1818416.eventorganiser.posts
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.sid1818416.eventorganiser.R
-import com.sid1818416.eventorganiser.database.Post
+import com.sid1818416.eventorganiser.database.models.Post
 import com.sid1818416.eventorganiser.databinding.PostItemBinding
 
 class PostViewAdapter(private val postsList :List<Post>):RecyclerView.Adapter<PostViewHolder>(){

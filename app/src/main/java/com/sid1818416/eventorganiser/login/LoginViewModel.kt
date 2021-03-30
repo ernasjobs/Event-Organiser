@@ -5,7 +5,7 @@ import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.*
 import kotlinx.coroutines.*
-import com.sid1818416.eventorganiser.database.RegisterRepository
+import com.sid1818416.eventorganiser.database.repository.RegisterRepository
 
 class LoginViewModel(private val repository: RegisterRepository, application: Application) :
     AndroidViewModel(application), Observable {

@@ -1,4 +1,4 @@
-package com.sid1818416.eventorganiser.database
+package com.sid1818416.eventorganiser.database.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

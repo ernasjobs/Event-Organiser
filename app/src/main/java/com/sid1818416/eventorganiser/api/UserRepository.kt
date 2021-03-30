@@ -1,7 +1,6 @@
 package com.sid1818416.eventorganiser.api
 
-import com.sid1818416.eventorganiser.database.Post
-import com.sid1818416.eventorganiser.database.User
+import com.sid1818416.eventorganiser.database.models.User
 import retrofit2.Response
 
 class UserRepository {

@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import com.sid1818416.eventorganiser.R
 import com.sid1818416.eventorganiser.database.RegisterDatabase
-import com.sid1818416.eventorganiser.database.RegisterRepository
+import com.sid1818416.eventorganiser.database.repository.RegisterRepository
 import com.sid1818416.eventorganiser.databinding.RegisterHomeFragmentBinding
 
 /**

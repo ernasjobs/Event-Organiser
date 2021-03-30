@@ -1,13 +1,16 @@
 package com.sid1818416.eventorganiser.database
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
-@Database(entities = [RegisterEntity::class], version = 1, exportSchema = false)
+import androidx.room.*
+import com.sid1818416.eventorganiser.database.models.RegisterEntity
+import com.sid1818416.eventorganiser.database.models.ToDoData
+
+@Database(entities = [RegisterEntity::class, ToDoData::class], version = 1, exportSchema = false)
+@TypeConverters(Converter::class)
 abstract class RegisterDatabase : RoomDatabase() {
 
     abstract val registerDatabaseDao: RegisterDatabaseDao
+    abstract fun toDoDao(): ToDoDao
 
     companion object {
 

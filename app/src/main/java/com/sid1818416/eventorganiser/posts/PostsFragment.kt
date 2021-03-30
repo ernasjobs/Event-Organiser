@@ -13,10 +13,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sid1818416.eventorganiser.R
 import com.sid1818416.eventorganiser.api.PostRepository
-import com.sid1818416.eventorganiser.database.Post
+import com.sid1818416.eventorganiser.database.models.Post
 import com.sid1818416.eventorganiser.databinding.FragmentPostsBinding
-import com.sid1818416.eventorganiser.databinding.UserDetailsFragmentBinding
-import com.sid1818416.eventorganiser.userDetails.MyRecycleViewAdapter
 
 class PostsFragment : Fragment() {
     private lateinit var binding: FragmentPostsBinding

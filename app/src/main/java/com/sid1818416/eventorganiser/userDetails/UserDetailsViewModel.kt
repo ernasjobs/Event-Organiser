@@ -3,12 +3,10 @@ package com.sid1818416.eventorganiser.userDetails
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.sid1818416.eventorganiser.database.RegisterRepository
+import com.sid1818416.eventorganiser.database.repository.RegisterRepository
 
-class UserDetailsViewModel (private val repository: RegisterRepository,application: Application):AndroidViewModel(application){
+class UserDetailsViewModel (private val repository: RegisterRepository, application: Application):AndroidViewModel(application){
 
     val users = repository.users
     init {

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.sid1818416.eventorganiser.R
-import com.sid1818416.eventorganiser.database.RegisterEntity
+import com.sid1818416.eventorganiser.database.models.RegisterEntity
 import com.sid1818416.eventorganiser.databinding.ListItemBinding
 
 class MyRecycleViewAdapter(private val usersList :List<RegisterEntity>):RecyclerView.Adapter<MyviewHolder>(){

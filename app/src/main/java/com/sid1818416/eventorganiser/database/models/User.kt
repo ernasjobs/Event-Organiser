@@ -1,4 +1,4 @@
-package com.sid1818416.eventorganiser.database
+package com.sid1818416.eventorganiser.database.models
 
 data class User (
     val id: Int,

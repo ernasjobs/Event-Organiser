@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sid1818416.eventorganiser.api.UserRepository
-import com.sid1818416.eventorganiser.database.User
+import com.sid1818416.eventorganiser.database.models.User
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
