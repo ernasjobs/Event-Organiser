@@ -34,15 +34,17 @@ class PostsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Data binding
         _binding = FragmentPostsBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         val repository = PostRepository()
         val viewModelFactory = PostsViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(PostsViewModel::class.java)
 
-
+        // setup RecyclerView
         initRecyclerView()
        // viewModel.getPosts()
+        // Observe LiveData
         Log.i("MYTAG", "Passed View Model GetPost")
         viewModel.myResponse.observe(viewLifecycleOwner, Observer { response ->
            // Log.i("MYTAG", response.body().toString())

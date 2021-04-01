@@ -9,45 +9,26 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavArgs
+import androidx.navigation.fragment.navArgs
 import com.sid1818416.eventorganiser.R
 import com.sid1818416.eventorganiser.api.PostRepository
 import com.sid1818416.eventorganiser.databinding.FragmentPostBinding
 
 class PostFragment : Fragment() {
-    private lateinit var viewModel: PostViewModel
 
+    private val args by navArgs<PostFragmentArgs>()
+    private var _binding : FragmentPostBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding: FragmentPostBinding = DataBindingUtil.inflate(
-            inflater,
-            R.layout.fragment_post, container, false
-        )
-        val repository = PostRepository()
-        val viewModelFactory = PostViewModelFactory(repository)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(PostViewModel::class.java)
-
-        binding.myPostViewModel = viewModel
+        // Data binding
+        _binding = FragmentPostBinding.inflate(inflater, container, false)
+        binding.args = args
         binding.lifecycleOwner = this
-        viewModel.getPost()
-        viewModel.myResponse.observe(viewLifecycleOwner, Observer { response ->
-            if(response.isSuccessful)
-            {
-                Log.d("Response", response.body()?.userId.toString())
-                Log.d("Response", response.body()?.id.toString())
-                Log.d("Response", response.body()?.title!!)
-                Log.d("Response", response.body()?.body!!)
-                binding.textView.text = response.body()?.title!!
-            }
-            else
-            {
-                Log.d("Response", response.errorBody().toString())
-                binding.textView.text = response.code().toString()
-            }
 
-
-        })
         return binding.root
     }
 

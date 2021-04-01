@@ -37,6 +37,7 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.MyPostViewHolder>(){
     override fun onBindViewHolder(holder: MyPostViewHolder, position: Int) {
         holder.bind(dataList[position])
 
+
     }
     fun setData(post: List<Post>){
        // val postDiffUtil = PostDiffUtil (dataList, post)
