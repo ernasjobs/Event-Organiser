@@ -1,5 +1,4 @@
 package com.sid1818416.eventorganiser.login
-
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -45,8 +44,8 @@ class LoginFragment : Fragment() {
 
         loginViewModel.navigatetoRegister.observe(viewLifecycleOwner, Observer { hasFinished->
             if (hasFinished == true){
-                Log.i("MYTAG","insidi observe")
-                displayUsersList()
+                Log.i("MYTAG","inside observer")
+                navigateToRegisterFragment()
                 loginViewModel.doneNavigatingRegiter()
             }
         })
@@ -72,21 +71,14 @@ class LoginFragment : Fragment() {
             }
         })
 
-//        loginViewModel.navigatetoUserDetails.observe(viewLifecycleOwner, Observer { hasFinished->
-//            if (hasFinished == true){
-//                Log.i("MYTAG","insidi observe")
-//                navigateUserDetails()
-//               // loginViewModel.doneNavigatingUserDetails()
-//
-//            }
-//        })
-        loginViewModel.navigatetoPostDetails.observe(viewLifecycleOwner, Observer { hasFinished->
+
+        loginViewModel.navigatetoPostsDetails.observe(viewLifecycleOwner, Observer { hasFinished->
             if (hasFinished == true){
                 Log.i("MYTAG","inside observe")
                 //navigateUserDetails()
-                navigatePostDetails()
+                navigatePostsDetails()
                 // loginViewModel.doneNavigatingUserDetails()
-                loginViewModel.doneNavigatingPostDetails()
+                loginViewModel.doneNavigatingPostsDetails()
             }
         })
 
@@ -96,21 +88,16 @@ class LoginFragment : Fragment() {
     }
 
 
-    private fun displayUsersList() {
-        Log.i("MYTAG","insidisplayUsersList")
+    private fun navigateToRegisterFragment() {
+
         val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
         NavHostFragment.findNavController(this).navigate(action)
 
     }
 
-//    private fun navigateUserDetails() {
-//        Log.i("MYTAG","insidisplayUsersList")
-//        val action = LoginFragmentDirections.actionLoginFragmentToUserDetailsFragment()
-//        NavHostFragment.findNavController(this).navigate(action)
-//    }
-    private fun navigatePostDetails() {
+    private fun navigatePostsDetails() {
         Log.i("MYTAG","displayfragmentdetails")
-        val action = LoginFragmentDirections.actionLoginFragmentToPostFragment()
+        val action = LoginFragmentDirections.actionLoginFragmentToPostsFragment2()
         NavHostFragment.findNavController(this).navigate(action)
     }
 

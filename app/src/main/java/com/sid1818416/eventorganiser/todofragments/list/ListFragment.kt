@@ -162,7 +162,4 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
         super.onDestroyView()
         _binding = null
     }
-
-
-
 }

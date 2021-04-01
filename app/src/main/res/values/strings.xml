@@ -40,6 +40,7 @@ organise your sailing events.</string>
     <string name="save">Save</string>
     <string name="delete_task">Delete Task</string>
     <string name="register">Register</string>
+    <string name="list_of_posts">List of posts</string>
     <string-array name="priorities">
         <item>High Priority</item>
         <item>Medium Priority</item>

@@ -1,42 +1,66 @@
 package com.sid1818416.eventorganiser.posts
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.sid1818416.eventorganiser.R
 import com.sid1818416.eventorganiser.database.models.Post
 import com.sid1818416.eventorganiser.databinding.PostItemBinding
 
-class PostViewAdapter(private val postsList :List<Post>):RecyclerView.Adapter<PostViewHolder>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val binding: PostItemBinding =
-            DataBindingUtil.inflate(layoutInflater, R.layout.post_item,parent,false)
-        return PostViewHolder(binding)
+class PostAdapter : RecyclerView.Adapter<PostAdapter.MyPostViewHolder>(){
+    var dataList = emptyList<Post>()
+
+    class MyPostViewHolder(private val binding: PostItemBinding) : RecyclerView.ViewHolder(binding.root){
+        fun bind(post: Post){
+            binding.post = post
+            Log.i("MYTAG", "Binding Post data")
+            binding.executePendingBindings()
+        }
+        companion object{
+            fun from(parent: ViewGroup): MyPostViewHolder{
+                val layoutInflater = LayoutInflater.from(parent.context)
+                val binding = PostItemBinding.inflate(layoutInflater, parent, false)
+                return MyPostViewHolder(binding)
+            }
+        }
     }
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyPostViewHolder {
+        return MyPostViewHolder.from(parent)
+    }
     override fun getItemCount(): Int {
-        return postsList.size
-    }
-
-    override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
-        holder.bind(postsList[position])
+        return dataList.size
 
     }
 
+    override fun onBindViewHolder(holder: MyPostViewHolder, position: Int) {
+        holder.bind(dataList[position])
+
+    }
+    fun setData(post: List<Post>){
+       // val postDiffUtil = PostDiffUtil (dataList, post)
+        //val postDiffResult = DiffUtil.calculateDiff((postDiffUtil))
+        this.dataList = post
+        notifyDataSetChanged();
+        Log.i("MYTAG", "Inside Datalist")
+        //Log.i("MYTAG", dataList.toString())
+        // notifies recycler view that the data has changed
+        //postDiffResult.dispatchUpdatesTo(this)
+    }
 
 }
 
-class PostViewHolder(private val binding : PostItemBinding):RecyclerView.ViewHolder(binding.root){
 
-    fun bind(post: Post){
-        binding.userIdText.text = post.id.toString()
-        binding.titleText.text = post.title
-        binding.bodyText.text = post.body
-    }
-
-}
+//class PostViewHolder(private val binding : PostItemBinding):RecyclerView.ViewHolder(binding.root){
+//
+//    fun bind(post: Post){
+//        binding.userIdText.text = post.id.toString()
+//        binding.titleText.text = post.title
+//        binding.bodyText.text = post.body
+//    }
+//
+//}
 
 
 

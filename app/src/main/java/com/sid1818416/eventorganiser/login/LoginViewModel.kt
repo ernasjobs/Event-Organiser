@@ -13,7 +13,7 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
         Log.i("MYTAG", "init")
     }
 
-    val users = repository.users
+   // val users = repository.users
 
     @Bindable
     val inputUsername = MutableLiveData<String>()
@@ -25,26 +25,12 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     private val _navigatetoRegister = MutableLiveData<Boolean>()
-
     val navigatetoRegister: LiveData<Boolean>
         get() = _navigatetoRegister
 
-    private val _navigatetoUserDetails = MutableLiveData<Boolean>()
-
-    val navigatetoUserDetails: LiveData<Boolean>
-        get() = _navigatetoUserDetails
-
-    private val _navigatetoUserInfo = MutableLiveData<Boolean>()
-
-    val navigatetoUserInfo: LiveData<Boolean>
-        get() = _navigatetoUserInfo
-
-    private val _navigatetoPostDetails = MutableLiveData<Boolean>()
-
-    val navigatetoPostDetails: LiveData<Boolean>
-        get() = _navigatetoPostDetails
-
-
+    private var _navigatetoPostsDetails = MutableLiveData<Boolean>()
+    val navigatetoPostsDetails: LiveData<Boolean>
+    get() = _navigatetoPostsDetails
 
     private val _errorToast = MutableLiveData<Boolean>()
 
@@ -77,8 +63,7 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
                     if(usersNames.passwrd == inputPassword.value){
                         inputUsername.value = null
                         inputPassword.value = null
-                     //   _navigatetoUserDetails.value = true
-                     _navigatetoPostDetails.value = true
+                     _navigatetoPostsDetails.value = true
                        // _navigatetoUserInfo.value = true
                     }else{
                         _errorToastInvalidPassword.value = true
@@ -91,22 +76,13 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
     }
 
 
-
-
     fun doneNavigatingRegiter() {
         _navigatetoRegister.value = false
     }
-    fun doneNavigatingUserInfo() {
-        _navigatetoUserInfo.value = false
-    }
 
-    fun doneNavigatingUserDetails() {
-        _navigatetoUserDetails.value = false
+    fun doneNavigatingPostsDetails() {
+        _navigatetoPostsDetails.value = false
     }
-    fun doneNavigatingPostDetails() {
-        _navigatetoPostDetails.value = false
-    }
-
 
     fun donetoast() {
         _errorToast.value = false
@@ -123,7 +99,6 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
         _errorToastInvalidPassword .value = false
         Log.i("MYTAG", "Done taoasting ")
     }
-
 
 
     override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {
