@@ -1,6 +1,8 @@
 package com.sid1818416.eventorganiser.register
 import android.app.Application
 import android.util.Log
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.*
@@ -52,7 +54,7 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
         get() = _errorToastUsername
 
 
-    fun sumbitButton() {
+    fun submitButton() {
         Log.i("MYTAG", "Inside SUBMIT BUTTON")
         if (inputFirstName.value == null || inputLastName.value == null || inputUsername.value == null || inputPassword.value == null) {
             _errorToast.value = true
@@ -71,7 +73,7 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
                     val lastName = inputLastName.value!!
                     val email = inputUsername.value!!
                     val password = inputPassword.value!!
-                    Log.i("MYTAG", "insidi Sumbit")
+                    Log.i("MYTAG", "inside Sumbit")
                     insert(RegisterEntity(0, firstName, lastName, email, password))
                     inputFirstName.value = null
                     inputLastName.value = null

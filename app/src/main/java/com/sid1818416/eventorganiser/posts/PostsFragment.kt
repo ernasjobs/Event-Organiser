@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +15,7 @@ import com.sid1818416.eventorganiser.AppNavigator
 import com.sid1818416.eventorganiser.api.PostRepository
 import com.sid1818416.eventorganiser.database.models.Post
 import com.sid1818416.eventorganiser.databinding.FragmentPostsBinding
+import com.sid1818416.eventorganiser.todofragments.SharedViewModel
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 
 class PostsFragment : Fragment() {
@@ -21,6 +23,7 @@ class PostsFragment : Fragment() {
     private var _binding:  FragmentPostsBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: PostsViewModel
+    private val mSharedViewModel: SharedViewModel by viewModels()
     private val adapter: PostAdapter by lazy { PostAdapter() }
 
     private lateinit var appNavigator: AppNavigator
@@ -37,6 +40,7 @@ class PostsFragment : Fragment() {
         // Data binding
         _binding = FragmentPostsBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
+        binding.mSharedViewModel = mSharedViewModel
         val repository = PostRepository()
         val viewModelFactory = PostsViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(PostsViewModel::class.java)
@@ -48,6 +52,8 @@ class PostsFragment : Fragment() {
         Log.i("MYTAG", "Passed View Model GetPost")
         viewModel.myResponse.observe(viewLifecycleOwner, Observer { response ->
            // Log.i("MYTAG", response.body().toString())
+            mSharedViewModel.checkIfPostTableEmpty(response.body()  as List<Post>)
+            Log.i("MYTAG", "Check If Posts api disconnected")
             adapter.setData(response.body()  as List<Post>)
         })
         return binding.root

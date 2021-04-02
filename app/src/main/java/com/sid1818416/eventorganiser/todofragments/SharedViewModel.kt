@@ -2,6 +2,7 @@ package com.sid1818416.eventorganiser.todofragments
 
 import android.app.Application
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.TextView
@@ -9,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.sid1818416.eventorganiser.R
+import com.sid1818416.eventorganiser.database.models.Post
 import com.sid1818416.eventorganiser.database.models.Priority
 import com.sid1818416.eventorganiser.database.models.ToDoData
 
@@ -17,6 +19,10 @@ class SharedViewModel(application: Application): AndroidViewModel(application) {
 
     fun checkIfToDoDataTableEmpty(toDoData: List<ToDoData>){
         emptyTable.value = toDoData.isEmpty()
+    }
+    fun checkIfPostTableEmpty(post: List<Post>){
+        emptyTable.value = post.isEmpty()
+        Log.i("MYTAG", "Check If Posts api disconnected")
     }
     val listener : AdapterView.OnItemSelectedListener = object :
     AdapterView.OnItemSelectedListener{
@@ -27,7 +33,6 @@ class SharedViewModel(application: Application): AndroidViewModel(application) {
                 2 -> {(parent?.getChildAt(0) as TextView).setTextColor(ContextCompat.getColor(application, R.color.green))}
             }
         }
-
         override fun onNothingSelected(parent: AdapterView<*>?) {
         }
 

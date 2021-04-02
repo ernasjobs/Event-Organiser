@@ -50,8 +50,9 @@ class RegisterFragment : Fragment() {
 
         registerViewModel.navigateto.observe(viewLifecycleOwner, Observer { hasFinished->
             if (hasFinished == true){
-                Log.i("MYTAG","insidi observe")
+                Log.i("MYTAG","inside observe")
                 displayUsersList()
+                Toast.makeText(requireContext(), "Account Succesfully created", Toast.LENGTH_SHORT).show()
                 registerViewModel.doneNavigating()
             }
         })
@@ -79,7 +80,7 @@ class RegisterFragment : Fragment() {
     }
 
     private fun displayUsersList() {
-        Log.i("MYTAG","insidisplayUsersList")
+        Log.i("MYTAG","inside display UsersList")
         val action = RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
         NavHostFragment.findNavController(this).navigate(action)
 

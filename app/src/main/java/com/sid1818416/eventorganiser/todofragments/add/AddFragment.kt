@@ -1,13 +1,11 @@
 package com.sid1818416.eventorganiser.todofragments.add
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.sid1818416.eventorganiser.R
-import com.sid1818416.eventorganiser.database.models.Priority
 import com.sid1818416.eventorganiser.database.models.ToDoData
 import com.sid1818416.eventorganiser.databinding.FragmentAddBinding
 import com.sid1818416.eventorganiser.todofragments.SharedViewModel

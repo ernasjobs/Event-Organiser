@@ -3,51 +3,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-    <LinearLayout
+    <data>
+        <variable
+            name="mSharedViewModel"
+            type="com.sid1818416.eventorganiser.todofragments.SharedViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/listLayout">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="579dp"
-            android:orientation="vertical"
-            tools:ignore="UselessParent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/postsRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingTop="8dp"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/textView_users"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingTop="@dimen/small_padding"
-                android:text="@string/list_of_posts"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_conversion_absoluteHeight="32dp"
-                tools:layout_conversion_absoluteWidth="379dp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="16dp" />
+        <ImageView
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/postsRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                tools:layout_conversion_absoluteHeight="537dp"
-                tools:layout_conversion_absoluteWidth="402dp"
-                tools:layout_editor_absoluteX="5dp"
-                tools:layout_editor_absoluteY="53dp">
+            android:id="@+id/no_data_imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_no_data"
+            android:visibility="invisible"
+            android:emptyTable="@{mSharedViewModel.emptyTable}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/postsRecyclerView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/postsRecyclerView"
+            app:layout_constraintVertical_bias="0.41000003" />
 
-            </androidx.recyclerview.widget.RecyclerView>
-
-        </LinearLayout>
-
-    </LinearLayout>
+        <TextView
+            android:id="@+id/no_data_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:visibility="invisible"
+            android:emptyTable="@{mSharedViewModel.emptyTable}"
+            android:text="@string/no_data"
+            android:alpha="0.5"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/postsRecyclerView"
+            app:layout_constraintStart_toStartOf="@+id/postsRecyclerView"
+            app:layout_constraintTop_toBottomOf="@+id/no_data_imageView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

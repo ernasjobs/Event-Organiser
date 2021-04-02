@@ -183,7 +183,7 @@
             android:padding="@dimen/small_padding"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            android:onClick="@{()->myViewModel.sumbitButton()}"
+            android:onClick="@{()->myViewModel.submitButton()}"
             android:text="@string/submitButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
