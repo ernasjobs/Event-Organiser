@@ -52,8 +52,12 @@ class RegisterFragment : Fragment() {
             if (hasFinished == true){
                 Log.i("MYTAG","inside observe")
                 displayUsersList()
-                Toast.makeText(requireContext(), "Account Succesfully created", Toast.LENGTH_SHORT).show()
                 registerViewModel.doneNavigating()
+            }
+        })
+        registerViewModel.message.observe(viewLifecycleOwner, Observer {
+            it.getContentIfNotHandled()?.let {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
             }
         })
 

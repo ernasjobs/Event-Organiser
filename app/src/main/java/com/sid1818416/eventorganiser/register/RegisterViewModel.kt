@@ -6,6 +6,7 @@ import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.*
+import com.sid1818416.eventorganiser.Event
 import kotlinx.coroutines.*
 import com.sid1818416.eventorganiser.database.models.RegisterEntity
 import com.sid1818416.eventorganiser.database.repository.RegisterRepository
@@ -17,7 +18,10 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
         Log.i("MYTAG", "init")
     }
 
+    private val statusMessage = MutableLiveData<Event<String>>()
 
+    val message : LiveData<Event<String>>
+        get() = statusMessage
     private var userdata: String? = null
 
     var userDetailsLiveData = MutableLiveData<Array<RegisterEntity>>()
@@ -75,6 +79,7 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
                     val password = inputPassword.value!!
                     Log.i("MYTAG", "inside Sumbit")
                     insert(RegisterEntity(0, firstName, lastName, email, password))
+                    statusMessage.value = Event("Account created successfully")
                     inputFirstName.value = null
                     inputLastName.value = null
                     inputUsername.value = null

@@ -18,7 +18,7 @@ interface PostApi {
     ): Response<Post>
 }
 interface PostsApi {
-    @GET("posts")
+    @GET("GetEvents/In Progress")
     //val posts : Call<List<Post?>?>?
    suspend fun getPosts(): Response<List<Post>>
 }

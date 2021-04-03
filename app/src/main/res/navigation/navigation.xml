@@ -68,7 +68,7 @@
     <fragment
         android:id="@+id/postFragment"
         android:name="com.sid1818416.eventorganiser.post.PostFragment"
-        android:label="Post Details"
+        android:label="Event Details"
         tools:layout="@layout/fragment_post" >
         <argument
             android:name="currentPost"
@@ -81,7 +81,7 @@
     <fragment
         android:id="@+id/postsFragment"
         android:name="com.sid1818416.eventorganiser.posts.PostsFragment"
-        android:label="List of Posts"
+        android:label="List of Events"
         tools:layout="@layout/fragment_posts" >
         <action
             android:id="@+id/action_postsFragment_to_loginFragment2"

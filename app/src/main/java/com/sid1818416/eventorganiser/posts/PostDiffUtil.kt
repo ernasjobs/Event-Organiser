@@ -22,10 +22,10 @@ class PostDiffUtil (
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-       return oldList[oldItemPosition].userId == newList[newItemPosition].userId
-               && return oldList[oldItemPosition].id == newList[newItemPosition].id
-               && return oldList[oldItemPosition].title == newList[newItemPosition].title
-               && return oldList[oldItemPosition].body == newList[newItemPosition].body
+       return oldList[oldItemPosition].id == newList[newItemPosition].id
+               && return oldList[oldItemPosition].eventDescription == newList[newItemPosition].eventDescription
+               && return oldList[oldItemPosition].eventStatus == newList[newItemPosition].eventStatus
+               && return oldList[oldItemPosition].eventPostcode == newList[newItemPosition].eventPostcode
 
     }
 

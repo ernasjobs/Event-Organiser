@@ -51,7 +51,7 @@ class PostsFragment : Fragment() {
         // Observe LiveData
         Log.i("MYTAG", "Passed View Model GetPost")
         viewModel.myResponse.observe(viewLifecycleOwner, Observer { response ->
-           // Log.i("MYTAG", response.body().toString())
+            Log.i("MYTAG", response.body().toString())
             mSharedViewModel.checkIfPostTableEmpty(response.body()  as List<Post>)
             Log.i("MYTAG", "Check If Posts api disconnected")
             adapter.setData(response.body()  as List<Post>)
