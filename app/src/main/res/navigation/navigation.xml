@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/mapFragment2">
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.sid1818416.eventorganiser.register.RegisterFragment"
@@ -139,6 +139,11 @@
             android:name="currentItem"
             app:argType="com.sid1818416.eventorganiser.database.models.ToDoData" />
     </fragment>
+    <fragment
+        android:id="@+id/mapFragment2"
+        android:name="com.sid1818416.eventorganiser.MapFragment"
+        android:label="Google Map"
+        tools:layout="@layout/fragment_map" />
 
 
 </navigation>
