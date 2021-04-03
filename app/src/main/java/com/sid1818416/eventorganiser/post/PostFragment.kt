@@ -14,7 +14,7 @@ class PostFragment : Fragment() {
 
     private val args by navArgs<PostFragmentArgs>()
     private var _binding : FragmentPostBinding? = null
-    var currentDateTimeString: String = DateFormat.getDateInstance().format(Date())
+   // var currentDateTimeString: String = DateFormat.getDateInstance().format(Date())
     private val binding get() = _binding!!
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -24,7 +24,7 @@ class PostFragment : Fragment() {
         _binding = FragmentPostBinding.inflate(inflater, container, false)
         binding.args = args
         binding.lifecycleOwner = this
-        binding.dateTimeTxtView.setText(currentDateTimeString)
+      //  binding.dateTimeTxtView.setText(currentDateTimeString)
         return binding.root
     }
 

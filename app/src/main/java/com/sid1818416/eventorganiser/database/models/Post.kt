@@ -17,9 +17,7 @@ data class Post (
         val eventPostcode : String,
         val eventCategory: String,
         val eventStatus: String,
-        val uniqueCode: String,
-        val latitude: Double,
-        val longitude: Double
+        val avatar : String
 
         ): Parcelable
 

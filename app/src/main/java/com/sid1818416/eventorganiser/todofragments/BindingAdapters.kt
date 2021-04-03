@@ -85,11 +85,11 @@ class BindingAdapters {
         @JvmStatic
         fun convertDateToString(view: TextView, dateString: String){
             val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
-            val formatter = SimpleDateFormat("dd MMM yyyy HH:mm")
+            val formatter = SimpleDateFormat("dd-MMM-yyyy  HH:mm")
             try {
                 val formattedDate = formatter.format(parser.parse(dateString))
                 System.out.println(formattedDate)
-                view.setText(formattedDate)
+                view.setText("Event Date: "+ formattedDate)
             } catch (e: ParseException) {
                 e.printStackTrace()
         }
