@@ -74,23 +74,6 @@ class PostsFragment : Fragment() {
         _binding = null
     }
 
-
-//    private fun displayPostsList() {
-//        Log.i("MYTAG", "Inside1 ...UserDetails..Fragment")
-//        viewModel.getPosts()
-//        viewModel.myResponse.observe(viewLifecycleOwner, Observer { response ->
-//            if(response.isSuccessful)
-//            {
-//                Log.i("MYTAG", "Inside12 ...UserDetails..Fragment")
-//                binding.postsRecyclerView.adapter = PostViewAdapter(response.body()  as List<Post>)
-//            }
-//            else
-//            {
-//                Log.d("Response", response.errorBody().toString())
-//                //binding.textView.text = response.code().toString()
-//            }
-//        })
-//    }
 }
 
 

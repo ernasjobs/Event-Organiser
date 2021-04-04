@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/mapFragment2">
+    app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.sid1818416.eventorganiser.register.RegisterFragment"
@@ -43,7 +43,9 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginFragment_to_postsFragment2"
-            app:destination="@id/postsFragment" />
+            app:destination="@id/postsFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -73,6 +75,12 @@
         <argument
             android:name="currentPost"
             app:argType="com.sid1818416.eventorganiser.database.models.Post" />
+        <action
+            android:id="@+id/action_postFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_postFragment_to_addFragment"
+            app:destination="@id/addFragment" />
     </fragment>
     <fragment
         android:id="@+id/userFragment"
@@ -85,10 +93,16 @@
         tools:layout="@layout/fragment_posts" >
         <action
             android:id="@+id/action_postsFragment_to_loginFragment2"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/to_left"
+            app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_postsFragment_to_postFragment"
-            app:destination="@id/postFragment" />
+            app:destination="@id/postFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
     </fragment>
     <fragment
         android:id="@+id/listFragment"

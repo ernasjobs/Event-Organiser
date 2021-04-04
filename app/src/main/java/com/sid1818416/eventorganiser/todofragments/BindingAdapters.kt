@@ -3,6 +3,7 @@ package com.sid1818416.eventorganiser.todofragments
 import android.annotation.SuppressLint
 import android.os.Build
 import android.view.View
+import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -29,6 +30,15 @@ class BindingAdapters {
             view.setOnClickListener{
                 if (navigate){
                     view.findNavController().navigate(R.id.action_listFragment_to_addFragment)
+                }
+            }
+        }
+        @BindingAdapter("android:navigateToListFragment")
+        @JvmStatic
+        fun  navigateToListFragment(view: Button, navigate: Boolean){
+            view.setOnClickListener{
+                if (navigate){
+                    view.findNavController().navigate(R.id.action_postFragment_to_listFragment)
                 }
             }
         }
