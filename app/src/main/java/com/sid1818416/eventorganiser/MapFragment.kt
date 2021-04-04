@@ -160,13 +160,17 @@ class MapFragment : Fragment() {
         callback = object : LocationCallback() {
             override fun onLocationResult(ubicacionResult: LocationResult?) {
                 super.onLocationResult(ubicacionResult)
-
+                var run: Boolean = true
                 for (ubicacion in ubicacionResult?.locations!!) {
-                    Toast.makeText(
-                        requireContext(),
-                        ubicacion.latitude.toString() + " , " + ubicacion.longitude.toString(),
-                        Toast.LENGTH_SHORT
-                    ).show()
+                        if (run){
+                            Toast.makeText(
+                                requireContext(),
+                                ubicacion.latitude.toString() + " , " + ubicacion.longitude.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        run = false
+
                     pocisionActual = LatLng(ubicacion.latitude, ubicacion.longitude)
                     Map.addMarker(
                         MarkerOptions()
@@ -189,8 +193,9 @@ class MapFragment : Fragment() {
 
     private fun initLocationUser() {
         locationRequest = LocationRequest()
-        locationRequest?.interval = 30000
-        locationRequest?.fastestInterval = 30000
+        //3000
+        locationRequest?.interval = 10000000
+        locationRequest?.fastestInterval = 10000000
         locationRequest?.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
     }
 
