@@ -16,8 +16,8 @@ object RetrofitInstance {
     val api: PostApi by lazy {
         retrofit.create(PostApi::class.java)
     }
-    val postsApi: PostsApi by lazy {
-        retrofit.create(PostsApi::class.java)
+    val EVENTS_API: EventsApi by lazy {
+        retrofit.create(EventsApi::class.java)
     }
     val userApi: UserApi by lazy {
         retrofit.create(UserApi::class.java)

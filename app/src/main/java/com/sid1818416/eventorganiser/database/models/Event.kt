@@ -6,7 +6,7 @@ import java.time.LocalDateTime
 import java.util.*
 
 @Parcelize
-data class Post (
+data class Event (
         val id: Int,
         val eventName: String,
         val eventDescription: String,
@@ -21,7 +21,7 @@ data class Post (
 
         ): Parcelable
 
-data class PostsResponse (
+data class EventResponse (
         val pages: Int,
-        val data: List<Post>
+        val data: List<Event>
 )

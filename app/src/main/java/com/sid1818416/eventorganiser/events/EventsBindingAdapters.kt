@@ -1,21 +1,20 @@
-package com.sid1818416.eventorganiser.posts
+package com.sid1818416.eventorganiser.events
 
 import android.widget.ImageView
 import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
 import androidx.navigation.findNavController
 import com.sid1818416.eventorganiser.R
-import com.sid1818416.eventorganiser.database.models.Post
+import com.sid1818416.eventorganiser.database.models.Event
 import com.bumptech.glide.Glide
 
-class PostsBindingAdapters {
+class EventsBindingAdapters {
     companion object {
         @BindingAdapter("android:sendDataToPostFragment")
         @JvmStatic
-        fun navigateToPostFragment (view: CardView, currenPost: Post){
+        fun navigateToPostFragment (view: CardView, currenEvent: Event){
             view.setOnClickListener{
-                val action = PostsFragmentDirections.actionPostsFragmentToPostFragment(currenPost)
+                val action = EventsFragmentDirections.actionPostsFragmentToPostFragment(currenEvent)
                 view.findNavController().navigate(action)
             }
         }

@@ -1,12 +1,11 @@
-package com.sid1818416.eventorganiser.posts
+package com.sid1818416.eventorganiser.events
 
 import androidx.recyclerview.widget.DiffUtil
-import com.sid1818416.eventorganiser.database.models.Post
-import com.sid1818416.eventorganiser.database.models.ToDoData
+import com.sid1818416.eventorganiser.database.models.Event
 
-class PostDiffUtil (
-    private val oldList: List<Post>,
-    private val newList: List<Post>
+class EventDiffUtil (
+    private val oldList: List<Event>,
+    private val newList: List<Event>
 ): DiffUtil.Callback()
 {
     override fun getOldListSize(): Int {

@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.sid1818416.eventorganiser.R
-import com.sid1818416.eventorganiser.database.models.Post
+import com.sid1818416.eventorganiser.database.models.Event
 import com.sid1818416.eventorganiser.database.models.Priority
 import com.sid1818416.eventorganiser.database.models.ToDoData
 
@@ -20,7 +20,7 @@ class SharedViewModel(application: Application): AndroidViewModel(application) {
     fun checkIfToDoDataTableEmpty(toDoData: List<ToDoData>){
         emptyTable.value = toDoData.isEmpty()
     }
-    fun checkIfPostTableEmpty(post: List<Post>){
+    fun checkIfPostTableEmpty(post: List<Event>){
         emptyTable.value = post.isEmpty()
         Log.i("MYTAG", "Check If Posts api disconnected")
     }

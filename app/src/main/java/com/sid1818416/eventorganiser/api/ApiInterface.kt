@@ -1,6 +1,6 @@
 package com.sid1818416.eventorganiser.api
 
-import com.sid1818416.eventorganiser.database.models.Post
+import com.sid1818416.eventorganiser.database.models.Event
 import com.sid1818416.eventorganiser.database.models.User
 import retrofit2.Response
 import retrofit2.http.GET
@@ -11,16 +11,16 @@ import retrofit2.http.Path
  */
 interface PostApi {
     @GET("posts/3")
-    suspend fun getPost(): Response<Post>
+    suspend fun getEvent(): Response<Event>
     @GET("posts/{postNumber}")
     suspend fun getPost2(
             @Path("postNumber") number: Int
-    ): Response<Post>
+    ): Response<Event>
 }
-interface PostsApi {
+interface EventsApi {
     @GET("GetEvents/Released")
     //val posts : Call<List<Post?>?>?
-   suspend fun getPosts(): Response<List<Post>>
+   suspend fun getEvents(): Response<List<Event>>
 }
 
 interface UserApi {

@@ -14,7 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.sid1818416.eventorganiser.R
 import com.sid1818416.eventorganiser.api.UserRepository
-import com.sid1818416.eventorganiser.databinding.FragmentPostBinding
+import com.sid1818416.eventorganiser.databinding.FragmentEventBinding
 import com.sid1818416.eventorganiser.databinding.FragmentUserBinding
 
 

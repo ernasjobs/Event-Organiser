@@ -1,4 +1,4 @@
-package com.sid1818416.eventorganiser.post
+package com.sid1818416.eventorganiser.event
 
 import android.content.Context
 import android.os.Bundle
@@ -11,15 +11,14 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.navArgs
 import com.sid1818416.eventorganiser.MapFragment
 import com.sid1818416.eventorganiser.R
-import com.sid1818416.eventorganiser.databinding.FragmentPostBinding
-import java.text.DateFormat
+import com.sid1818416.eventorganiser.databinding.FragmentEventBinding
 import java.util.*
 
-class PostFragment : Fragment() {
+class EventFragment : Fragment() {
 
     lateinit var context: AppCompatActivity
-    private val args by navArgs<PostFragmentArgs>()
-    private var _binding : FragmentPostBinding? = null
+    private val args by navArgs<EventFragmentArgs>()
+    private var _binding : FragmentEventBinding? = null
    // var currentDateTimeString: String = DateFormat.getDateInstance().format(Date())
     private val binding get() = _binding!!
     override fun onAttach(context: Context) {
@@ -31,7 +30,7 @@ class PostFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Data binding
-        _binding = FragmentPostBinding.inflate(inflater, container, false)
+        _binding = FragmentEventBinding.inflate(inflater, container, false)
         binding.args = args
         binding.lifecycleOwner = this
       //  binding.dateTimeTxtView.setText(currentDateTimeString)
@@ -44,7 +43,4 @@ class PostFragment : Fragment() {
         fragmentTransaction.commit()
         return binding.root
     }
-
-
-
 }

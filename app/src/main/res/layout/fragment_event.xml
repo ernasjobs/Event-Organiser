@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".post.PostFragment">
+    tools:context=".event.EventFragment">
     <data>
         <variable
             name="args"
-            type="com.sid1818416.eventorganiser.post.PostFragmentArgs" />
+            type="com.sid1818416.eventorganiser.event.EventFragmentArgs" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
